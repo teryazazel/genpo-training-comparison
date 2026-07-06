@@ -1,0 +1,35 @@
+{
+  "version": 7,
+  "updated": "2026-07-04",
+  "COS": ["ASH", "HLTC", "TH", "HATC", "HRAP", "HRST", "APM", "HAC-AO", "EGAS"],
+  "CO_LABEL": {
+    "ASH": "ASH",
+    "HLTC": "HLTC",
+    "TH": "TH",
+    "HATC": "HATC",
+    "HRAP": "HRAP",
+    "HRST": "HRS-T",
+    "APM": "APM",
+    "HAC-AO": "HAC-AO",
+    "EGAS": "EG-AS"
+  },
+  "STATUSES": {
+    "confirmed": {"label": "Confirmed", "color": "#34c759", "bg": "#e4f6e9", "fg": "#1d4d2b"},
+    "tentative": {"label": "Tentative", "color": "#ff9500", "bg": "#fff3e0", "fg": "#5f3a00"}
+  },
+  "CATS": {
+    "honda": {"label": "Honda Group", "sub": "Standard / shared across the Honda group", "badge": "ob-honda"},
+    "specific": {"label": "Specific", "sub": "Unique to each company", "badge": "ob-specific"}
+  },
+  "courses": {
+    "ASH": {"Apr": [], "May": [], "Jun": [], "Jul": [], "Aug": [], "Sep": [], "Oct": [], "Nov": [], "Dec": [], "Jan": [], "Feb": [], "Mar": [], "UNS": []},
+    "HLTC": {"Apr": [], "May": [], "Jun": [], "Jul": [], "Aug": [], "Sep": [], "Oct": [], "Nov": [], "Dec": [], "Jan": [], "Feb": [], "Mar": [], "UNS": []},
+    "TH": {"Apr": [], "May": [], "Jun": [], "Jul": [], "Aug": [], "Sep": [], "Oct": [], "Nov": [], "Dec": [], "Jan": [], "Feb": [], "Mar": [], "UNS": []},
+    "HATC": {"Apr": [], "May": [], "Jun": [], "Jul": [], "Aug": [], "Sep": [], "Oct": [], "Nov": [], "Dec": [], "Jan": [], "Feb": [], "Mar": [], "UNS": []},
+    "HRAP": {"Apr": [], "May": [], "Jun": [], "Jul": [], "Aug": [], "Sep": [], "Oct": [], "Nov": [], "Dec": [], "Jan": [], "Feb": [], "Mar": [], "UNS": []},
+    "HRST": {"Apr": [], "May": [], "Jun": [], "Jul": [], "Aug": [], "Sep": [], "Oct": [], "Nov": [], "Dec": [], "Jan": [], "Feb": [], "Mar": [], "UNS": []},
+    "APM": {"Apr": [], "May": [], "Jun": [], "Jul": [], "Aug": [], "Sep": [], "Oct": [], "Nov": [], "Dec": [], "Jan": [], "Feb": [], "Mar": [], "UNS": []},
+    "HAC-AO": {"Apr": [], "May": [], "Jun": [], "Jul": [], "Aug": [], "Sep": [], "Oct": [], "Nov": [], "Dec": [], "Jan": [], "Feb": [], "Mar": [], "UNS": []},
+    "EGAS": {"Apr": [], "May": [], "Jun": [], "Jul": [], "Aug": [], "Sep": [], "Oct": [], "Nov": [], "Dec": [], "Jan": [], "Feb": [], "Mar": [], "UNS": []}
+  }
+}

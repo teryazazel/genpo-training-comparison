@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9Genpo Training Comparison 2026–2027</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#cc0000; --accent-d:#a30000;
+  --ink:#1c1c1e; --ink-2:#48484a; --muted:#8e8e93; --faint:#b0b0b5;
+  --bg:#f4f4f6; --surface:#ffffff; --surface-2:#fbfbfc;
+  --line:rgba(0,0,0,0.07); --line-2:rgba(0,0,0,0.045);
+  --ring:0 0 0 0.5px rgba(0,0,0,0.055);
+  --shadow:0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.07);
+  --shadow-lg:0 24px 60px rgba(0,0,0,0.16);
+  --r-card:18px; --r-ctrl:12px; --r-chip:999px;
+  --mono:'SF Mono',ui-monospace,'Menlo','Roboto Mono',monospace;
+}
+body{font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,'Tahoma',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:15px;letter-spacing:0.01em}
+::selection{background:rgba(204,0,0,0.12)}
+
+/* ── NAV ── */
+.nav{background:rgba(255,255,255,0.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid var(--line);position:sticky;top:0;z-index:200;padding:0 24px}
+.nav-inner{max-width:1720px;margin:0 auto;display:flex;align-items:center;gap:14px;height:64px}
+.nav-mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+.nav-vr{width:1px;height:26px;background:var(--line);flex-shrink:0}
+.nav-title{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1.15}
+.nav-sub{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:0.01em;margin-top:1px}
+.nav-tabs{display:flex;gap:2px;margin-left:auto;background:#ededf0;border-radius:10px;padding:3px;flex-shrink:0}
+.nav-tab{padding:6px 16px;border-radius:8px;font-size:13.5px;font-weight:500;color:var(--muted);cursor:pointer;border:none;background:transparent;font-family:inherit;transition:all 0.18s;white-space:nowrap}
+.nav-tab:hover{color:var(--ink-2)}
+.nav-tab.active{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,0.12);font-weight:600}
+.nav-btn{padding:7px 16px;border-radius:10px;font-size:13.5px;font-weight:600;cursor:pointer;border:none;font-family:inherit;display:flex;align-items:center;gap:5px;transition:all 0.18s;white-space:nowrap;flex-shrink:0}
+.btn-import{background:transparent;color:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line);margin-left:8px}
+.btn-import:hover{background:var(--surface-2);box-shadow:inset 0 0 0 1px rgba(0,0,0,0.15)}
+.btn-export{background:var(--accent);color:#fff;margin-left:4px;box-shadow:0 1px 2px rgba(204,0,0,0.25)}
+.btn-export:hover{background:var(--accent-d)}
+
+/* ── PAGES ── */
+.page{display:none;max-width:1720px;margin:0 auto;padding:20px 24px}
+.page.active{display:block}
+
+/* ── FILTERS ── */
+.filter-bar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:11px;align-items:center}
+.filter-bar-cat{margin-bottom:15px}
+.filter-label{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-right:4px}
+.chip{padding:6px 15px;border-radius:var(--r-chip);font-size:13.5px;font-weight:500;cursor:pointer;border:none;font-family:inherit;transition:all 0.16s;background:var(--surface);color:var(--ink-2);box-shadow:var(--ring)}
+.chip:hover{box-shadow:0 0 0 1px rgba(0,0,0,0.16)}
+.chip.active{background:var(--accent);color:#fff;box-shadow:none}
+.chip.cat-chip.active{background:var(--ink)}
+.legend-bar{display:flex;gap:15px;flex-wrap:wrap;align-items:center;margin-left:auto;padding-left:10px}
+.leg{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);font-weight:500}
+.leg-bar{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+
+/* ── TABLE ── */
+.tbl-card{background:var(--surface);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow-md),var(--ring)}
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;table-layout:fixed;min-width:1750px}
+col.cc{width:90px}
+col.cm{width:130px}
+col.cu{width:130px}
+thead th{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:11px 8px;border-right:0.5px solid rgba(255,255,255,0.16);white-space:nowrap;text-align:center;letter-spacing:0.07em;text-transform:uppercase}
+thead th:first-child{text-align:left;padding-left:16px}
+thead th:last-child{border-right:none}
+.q-th{background:#a30000 !important;font-size:12px}
+.uns-th{background:#5e5e63 !important}
+tbody td{padding:6px 5px;border-bottom:0.5px solid var(--line-2);border-right:0.5px solid var(--line-2);vertical-align:top}
+tbody td:last-child{border-right:none;background:var(--surface-2)}
+tbody tr:last-child td{border-bottom:none}
+td.coc{font-size:15px;font-weight:700;color:var(--ink);background:var(--surface-2);padding:11px 14px;white-space:nowrap;border-right:1px solid var(--line)}
+.total-r td{background:#fdf3f3;font-size:12.5px;font-weight:700;color:var(--accent);text-align:center;padding:9px;font-family:var(--mono)}
+.total-r td:first-child{text-align:left;padding-left:16px;color:var(--muted);font-family:inherit}
+
+/* ── CALENDAR EVENT BLOCKS ── */
+.evt{display:block;border-radius:9px;padding:7px 9px 7px 11px;margin:3px 1px;cursor:pointer;position:relative;transition:filter 0.12s,transform 0.08s;overflow:hidden}
+.evt:hover{filter:brightness(0.975)}
+.evt:active{transform:scale(0.985)}
+.evt::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3.5px}
+.evt-name{font-size:12.5px;font-weight:600;line-height:1.32;word-break:break-word;letter-spacing:-0.005em}
+.evt-date{font-size:11px;font-weight:500;opacity:0.78;margin-top:3px;line-height:1.3;font-family:var(--mono);letter-spacing:-0.02em}
+.evt-tg{font-size:10.5px;font-weight:400;opacity:0.6;margin-top:2px;line-height:1.3;word-break:break-word}
+.evt-cat{display:inline-block;font-size:9px;font-weight:700;padding:1.5px 6px;border-radius:5px;margin-top:5px;letter-spacing:0.04em;text-transform:uppercase}
+.cell-add{display:flex;align-items:center;justify-content:center;width:100%;height:22px;border-radius:7px;background:transparent;border:1px dashed var(--line);cursor:pointer;font-size:14px;color:var(--faint);transition:all 0.16s;margin:3px 1px;font-family:inherit}
+.cell-add:hover{background:#fdf5f5;color:var(--accent);border-color:rgba(204,0,0,0.4)}
+
+/* ── OVERVIEW (comparison matrix) ── */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:18px}
+.stat-c{background:var(--surface);border-radius:var(--r-card);padding:17px 20px;box-shadow:var(--shadow),var(--ring)}
+.stat-n{font-size:30px;font-weight:700;color:var(--accent);line-height:1;font-family:var(--mono);letter-spacing:-0.03em}
+.stat-l{font-size:12px;color:var(--muted);margin-top:6px;font-weight:500;letter-spacing:0.01em}
+@media(max-width:980px){.stats-grid{grid-template-columns:1fr 1fr}}
+.ov-sec{background:var(--surface);border-radius:var(--r-card);box-shadow:var(--shadow),var(--ring);margin-bottom:16px;overflow:hidden}
+.ov-sec-head{display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:0.5px solid var(--line-2)}
+.ov-badge{font-size:13px;font-weight:700;padding:5px 14px;border-radius:9px;letter-spacing:0.005em}
+.ob-honda{background:#fdeaea;color:#a30000}
+.ob-specific{background:#e8f4ff;color:#0055a5}
+.ov-sec-sub{font-size:12.5px;color:var(--muted)}
+.ov-count{margin-left:auto;font-size:12.5px;color:var(--muted);font-weight:600;font-family:var(--mono);letter-spacing:-0.01em}
+.ov-tbl-wrap{overflow-x:auto}
+.ov-tbl{width:100%;border-collapse:collapse;table-layout:fixed;min-width:1000px}
+.ov-tbl col.oc-name{width:300px}
+.ov-tbl col.oc-cat{width:150px}
+.ov-tbl col.oc-co{width:auto}
+.ov-tbl thead th{background:#fafafa;color:#6e6e73;font-size:12px;font-weight:700;padding:8px 6px;text-align:center;border-bottom:0.5px solid rgba(0,0,0,0.08);letter-spacing:0.03em;white-space:nowrap}
+.ov-tbl thead th:first-child{text-align:left;padding-left:18px}
+.ov-tbl tbody td{padding:7px 6px;border-bottom:0.5px solid rgba(0,0,0,0.05);text-align:center;vertical-align:middle}
+.ov-tbl tbody tr:last-child td{border-bottom:none}
+.ov-tbl tbody tr:hover td{background:#fafafa}
+.ovr-name{text-align:left !important;padding-left:18px !important;font-size:13.5px;font-weight:500;color:#1c1c1e;cursor:pointer;line-height:1.35;word-break:break-word}
+.ovr-name:hover{color:#cc0000;text-decoration:underline}
+.ov-dot{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border-radius:7px;font-size:11.5px;font-weight:700;cursor:pointer;transition:transform 0.1s;padding:0 5px;font-family:var(--mono)}
+.ov-dot:hover{transform:scale(1.12)}
+.ov-dot-c{background:#e4f6e9;color:#1a7a3a}
+.ov-dot-t{background:#fff3e0;color:#c85e00}
+.ov-dot-mix{background:linear-gradient(135deg,#e4f6e9 50%,#fff3e0 50%);color:#1c1c1e}
+.mini-seg{display:inline-flex;background:#f2f2f7;border-radius:8px;padding:2px;gap:1px}
+.mini-seg button{padding:4px 9px;border-radius:6px;border:none;font-family:inherit;font-size:10.5px;font-weight:700;cursor:pointer;background:transparent;color:#aeaeb2;transition:all 0.12s;letter-spacing:0.02em}
+.mini-seg button.on-honda{background:#fdeaea;color:#a30000}
+.mini-seg button.on-specific{background:#e8f4ff;color:#0055a5}
+.grp-rec{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;border:0.5px solid rgba(0,0,0,0.08);margin-bottom:7px}
+.grp-rec-bar{width:4px;align-self:stretch;border-radius:2px;flex-shrink:0}
+.grp-rec-info{flex:1;min-width:0}
+.grp-rec-co{font-size:13.5px;font-weight:700;color:#1c1c1e}
+.grp-rec-meta{font-size:12px;color:#8e8e93;margin-top:1px}
+.grp-edit-btn{padding:6px 13px;border-radius:8px;border:none;font-family:inherit;font-size:12.5px;font-weight:600;background:#f2f2f7;color:#1c1c1e;cursor:pointer;flex-shrink:0;transition:background 0.13s}
+.grp-edit-btn:hover{background:#e5e5ea}
+
+/* ── SETTINGS ── */
+.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.settings-grid{grid-template-columns:1fr}}
+.set-card{background:var(--surface);border-radius:var(--r-card);padding:20px;box-shadow:var(--shadow),var(--ring)}
+.set-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:-0.005em}
+.set-sub{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.set-row{display:flex;align-items:center;gap:9px;padding:9px 0;border-bottom:0.5px solid var(--line-2)}
+.set-row:last-child{border-bottom:none}
+.set-badge{font-size:12px;font-weight:700;padding:3px 9px;border-radius:7px;min-width:78px;text-align:center;flex-shrink:0}
+.set-input{flex:1;padding:8px 11px;border:1px solid var(--line);border-radius:10px;font-size:13.5px;font-family:inherit;outline:none;transition:all 0.15s}
+.set-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(204,0,0,0.07)}
+.set-color{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);cursor:pointer;padding:2px;flex-shrink:0}
+.save-btn{width:100%;margin-top:14px;padding:11px;border-radius:var(--r-ctrl);background:var(--accent);color:#fff;border:none;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;transition:all 0.15s;box-shadow:0 1px 2px rgba(204,0,0,0.22)}
+.save-btn:hover{background:var(--accent-d)}
+.add-row-btn{width:100%;margin-top:9px;padding:9px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--ink-2);font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.15s}
+.add-row-btn:hover{background:var(--surface-2);border-color:rgba(0,0,0,0.16)}
+
+/* ── MODAL ── */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.32);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:400;align-items:center;justify-content:center;padding:20px}
+.modal-bg.open{display:flex;animation:fadein 0.16s ease}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.modal{background:var(--surface);border-radius:22px;padding:26px;width:460px;max-width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);animation:pop 0.18s cubic-bezier(0.2,0.8,0.3,1)}
+@keyframes pop{from{transform:scale(0.97);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.modal-title{font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-0.01em}
+.modal-close{background:none;border:none;cursor:pointer;font-size:18px;color:var(--muted);width:30px;height:30px;border-radius:8px;font-family:inherit;display:flex;align-items:center;justify-content:center;transition:all 0.14s}
+.modal-close:hover{background:#f0f0f3;color:var(--ink)}
+.fg{margin-bottom:15px}
+.fl{font-size:11px;font-weight:700;color:var(--ink-2);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:block}
+.fi,.fs{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:var(--r-ctrl);font-size:15px;font-family:inherit;background:var(--surface);color:var(--ink);outline:none;transition:all 0.15s}
+.fi:focus,.fs:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(204,0,0,0.08)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.date-row{display:flex;align-items:center;gap:8px}
+.date-row .fi{flex:1;font-family:var(--mono);font-size:13.5px;letter-spacing:-0.01em}
+.date-sep{color:var(--faint);font-weight:600;flex-shrink:0}
+.date-clear{flex-shrink:0;padding:0 12px;height:39px;border-radius:var(--r-ctrl);border:1px solid var(--line);background:var(--surface);color:var(--muted);font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:all 0.14s}
+.date-clear:hover{background:#f0f0f3;color:var(--ink)}
+.date-note{font-size:11.5px;color:var(--muted);margin-top:7px;line-height:1.4}
+.btn-row{display:flex;gap:9px;justify-content:flex-end;margin-top:22px;align-items:center}
+.btn{padding:11px 20px;border-radius:var(--r-ctrl);font-size:14px;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all 0.14s;letter-spacing:0.005em}
+.btn-cancel{background:transparent;color:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line)}
+.btn-cancel:hover{background:#f6f6f8;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.16)}
+.btn-save{background:var(--accent);color:#fff;box-shadow:0 1px 2px rgba(204,0,0,0.25)}
+.btn-save:hover{background:var(--accent-d)}
+.btn-del{background:transparent;color:#e0362b;box-shadow:inset 0 0 0 1px rgba(224,54,43,0.35);margin-right:auto}
+.btn-del:hover{background:#fdeceb}
+.seg{display:flex;background:#f0f0f3;border-radius:var(--r-ctrl);padding:3px;gap:2px}
+.seg-btn{flex:1;padding:9px 4px;border-radius:9px;border:none;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);transition:all 0.14s}
+.seg-btn:hover{color:var(--ink-2)}
+.seg-btn.active{background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,0.1);color:var(--ink)}
+.seg-btn.active.sg-confirmed{color:#1a7a3a}
+.seg-btn.active.sg-tentative{color:#c85e00}
+
+/* ── EXPORT MODAL ── */
+.exp-modal{background:var(--surface);border-radius:22px;padding:24px;width:500px;max-width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);animation:pop 0.18s cubic-bezier(0.2,0.8,0.3,1)}
+.exp-sec{font-size:11px;font-weight:700;color:var(--ink-2);text-transform:uppercase;letter-spacing:0.07em;margin:15px 0 9px}
+.exp-opt{display:flex;align-items:center;gap:12px;padding:11px 13px;border-radius:var(--r-ctrl);border:1px solid var(--line);margin-bottom:8px;cursor:pointer;transition:all 0.15s}
+.exp-opt:hover{background:var(--surface-2)}
+.exp-opt.sel{border-color:var(--accent);background:#fdf6f6;box-shadow:0 0 0 2.5px rgba(204,0,0,0.08)}
+.exp-ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.exp-name{font-size:14px;font-weight:600;color:var(--ink)}
+.exp-desc{font-size:12px;color:var(--muted);margin-top:2px}
+.exp-chk{margin-left:auto;width:20px;height:20px;border-radius:50%;border:1.5px solid #d1d1d6;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;transition:all 0.14s;flex-shrink:0}
+.exp-opt.sel .exp-chk{background:var(--accent);border-color:var(--accent)}
+.co-chk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.coch{padding:8px 9px;border-radius:9px;border:1px solid var(--line);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.14s;background:var(--surface);color:var(--ink-2);text-align:center}
+.coch.sel{background:#fdf6f6;border-color:var(--accent);color:var(--accent)}
+
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#d1d1d6;border-radius:3px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">AP</div>
+    <div class="nav-vr"></div>
+    <div>
+      <div class="nav-title">9Genpo Training Comparison</div>
+      <div class="nav-sub">103Ki · Apr 2026 – Mar 2027</div>
+    </div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showPage('matrix',this)">Matrix</button>
+      <button class="nav-tab" onclick="showPage('overview',this)">Overview</button>
+      <button class="nav-tab" onclick="showPage('settings',this)">Settings</button>
+    </div>
+    <button class="nav-btn btn-import" onclick="document.getElementById('import-file').click()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 5 17 10"/><line x1="12" y1="5" x2="12" y2="15"/></svg>
+      Import
+    </button>
+    <input type="file" id="import-file" accept=".csv" style="display:none" onchange="handleImport(event)">
+    <button class="nav-btn btn-export" onclick="openExport()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Export
+    </button>
+  </div>
+</nav>
+
+<!-- MATRIX -->
+<div class="page active" id="page-matrix">
+  <div class="filter-bar" style="padding-top:3px">
+    <span class="filter-label">Company</span>
+    <button class="chip active" data-co="all" onclick="filterCo('all',this)">All</button>
+  </div>
+  <div class="filter-bar filter-bar-cat">
+    <span class="filter-label">Category</span>
+    <button class="chip cat-chip active" data-cat="all" onclick="filterCat('all',this)">All</button>
+    <button class="chip cat-chip" data-cat="honda" onclick="filterCat('honda',this)">Honda Group</button>
+    <button class="chip cat-chip" data-cat="specific" onclick="filterCat('specific',this)">Specific</button>
+    <div class="legend-bar"></div>
+  </div>
+  <div class="tbl-card">
+    <div class="tbl-wrap">
+      <table>
+        <colgroup>
+          <col class="cc">
+          <col class="cm"><col class="cm"><col class="cm"><col class="cm">
+          <col class="cm"><col class="cm"><col class="cm"><col class="cm">
+          <col class="cm"><col class="cm"><col class="cm"><col class="cm">
+          <col class="cu">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="q-th"></th>
+            <th class="q-th" colspan="3">Q1</th>
+            <th class="q-th" colspan="3">Q2</th>
+            <th class="q-th" colspan="3">Q3</th>
+            <th class="q-th" colspan="3">Q4</th>
+            <th class="uns-th"></th>
+          </tr>
+          <tr>
+            <th>Company</th>
+            <th>Apr '26</th><th>May '26</th><th>Jun '26</th>
+            <th>Jul '26</th><th>Aug '26</th><th>Sep '26</th>
+            <th>Oct '26</th><th>Nov '26</th><th>Dec '26</th>
+            <th>Jan '27</th><th>Feb '27</th><th>Mar '27</th>
+            <th class="uns-th">Unscheduled</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+  <p style="font-size:13px;color:#8e8e93;margin-top:10px">Click any block to edit · <b style="color:#cc0000">+</b> to add a course</p>
+</div>
+
+<!-- OVERVIEW -->
+<div class="page" id="page-overview">
+  <div class="stats-grid" id="stats-grid" style="padding-top:3px"></div>
+  <div id="ov-sections"></div>
+  <p style="font-size:13px;color:#8e8e93;margin:4px 2px 14px">Click a course name to see &amp; edit its records · Use the AO / COM / SPE buttons to recategorize a whole course group · Click a count badge to jump into that Genpo's records</p>
+</div>
+
+<!-- GROUP MODAL -->
+<div class="modal-bg" id="grp-bg" onclick="closeGrpBg(event)">
+  <div class="modal" style="width:520px">
+    <div class="modal-head">
+      <span class="modal-title" id="grp-title">Course Group</span>
+      <button class="modal-close" onclick="closeGrp()">✕</button>
+    </div>
+    <div class="fg">
+      <label class="fl">Category (applies to all records of this course)</label>
+      <div class="seg" id="grp-seg">
+        <button class="seg-btn" data-c="honda" onclick="setGrpCat('honda')">Honda Group</button>
+        <button class="seg-btn" data-c="specific" onclick="setGrpCat('specific')">Specific</button>
+      </div>
+    </div>
+    <div class="fg">
+      <label class="fl">Records (<span id="grp-count">0</span>)</label>
+      <div id="grp-list" style="max-height:46vh;overflow-y:auto"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-cancel" onclick="closeGrp()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- SETTINGS -->
+<div class="page" id="page-settings">
+  <div style="padding-top:3px;margin-bottom:16px">
+    <div style="font-size:20px;font-weight:700;letter-spacing:-0.01em">Settings</div>
+    <div style="font-size:13px;color:#8e8e93;margin-top:2px">Customize statuses, categories, and companies</div>
+  </div>
+  <div class="settings-grid">
+    <div class="set-card">
+      <div class="set-title">Status Colors &amp; Labels</div>
+      <div class="set-sub">Block colors follow status — change label or color here</div>
+      <div id="status-list"></div>
+      <button class="save-btn" onclick="saveStatuses()">Save Statuses</button>
+    </div>
+    <div class="set-card">
+      <div class="set-title">Categories</div>
+      <div class="set-sub">The two overview buckets — rename as needed</div>
+      <div id="cat-list"></div>
+      <button class="save-btn" onclick="saveCats()">Save Categories</button>
+    </div>
+    <div class="set-card">
+      <div class="set-title">Companies</div>
+      <div class="set-sub">Edit display labels, or add a new company</div>
+      <div id="co-list"></div>
+      <button class="add-row-btn" onclick="addCompany()">+ Add company</button>
+      <button class="save-btn" onclick="saveCompanies()">Save Companies</button>
+    </div>
+    <div class="set-card">
+      <div class="set-title">Share &amp; Data</div>
+      <div class="set-sub">Publish to GitHub, or back up / restore the dataset</div>
+      <button class="add-row-btn" onclick="exportJSON()" style="margin-top:0;border-style:solid;border-color:#cc0000;color:#cc0000">Download data.json — publish to GitHub</button>
+      <button class="add-row-btn" onclick="doCSV(true)">Download all data as CSV (backup)</button>
+      <button class="add-row-btn" onclick="document.getElementById('import-file').click()">Import CSV (appends to current data)</button>
+      <button class="add-row-btn" onclick="clearAll()" style="color:#ff3b30;border-color:#ff3b30">Clear all courses</button>
+      <div id="share-hint" style="font-size:12px;color:#8e8e93;margin-top:11px;line-height:1.5"></div>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT MODAL -->
+<div class="modal-bg" id="modal-bg" onclick="closeMBg(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <span class="modal-title" id="modal-title">Course</span>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="fg"><label class="fl">Course Name</label><input class="fi" id="f-name" type="text"></div>
+    <div class="fg">
+      <label class="fl">Training Dates</label>
+      <div class="date-row">
+        <input class="fi" id="f-start" type="date">
+        <span class="date-sep">–</span>
+        <input class="fi" id="f-end" type="date">
+        <button type="button" class="date-clear" onclick="clearDates()">Clear</button>
+      </div>
+      <div class="date-note">Shown as dd/mm/yyyy. Leave blank if not yet scheduled.</div>
+    </div>
+    <div class="fg"><label class="fl">Target Audience</label><input class="fi" id="f-target" type="text" placeholder="e.g. Manager, Staff"></div>
+    <div class="fg">
+      <label class="fl">Status</label>
+      <div class="seg" id="seg-status">
+        <button class="seg-btn sg-confirmed" data-s="confirmed" onclick="setSeg(this)">Confirmed</button>
+        <button class="seg-btn sg-tentative" data-s="tentative" onclick="setSeg(this)">Tentative</button>
+      </div>
+    </div>
+    <div class="fr">
+      <div class="fg"><label class="fl">Category</label><select class="fs" id="f-cat"></select></div>
+      <div class="fg"><label class="fl">Month Column</label><select class="fs" id="f-month"></select></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-del" id="btn-del" onclick="delCourse()" style="display:none">Delete</button>
+      <button class="btn btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-save" onclick="saveCourse()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- EXPORT MODAL -->
+<div class="modal-bg" id="export-bg" onclick="closeExpBg(event)">
+  <div class="exp-modal">
+    <div class="modal-head">
+      <span class="modal-title">Export</span>
+      <button class="modal-close" onclick="closeExport()">✕</button>
+    </div>
+    <div class="exp-sec">Format</div>
+    <div class="exp-opt sel" id="eo-json" onclick="selFmt('json')">
+      <div class="exp-ico" style="background:#fff0ed;color:#cc0000;font-size:12px;font-weight:700">JSON</div>
+      <div><div class="exp-name">Shared data (data.json)</div><div class="exp-desc">Commit to GitHub — everyone's view updates</div></div>
+      <div class="exp-chk" id="ec-json">✓</div>
+    </div>
+    <div class="exp-opt" id="eo-html" onclick="selFmt('html')">
+      <div class="exp-ico" style="background:#f0f0f3;color:#1c1c1e;font-size:11px;font-weight:700">HTML</div>
+      <div><div class="exp-name">Self-contained HTML</div><div class="exp-desc">Single file with data baked in (offline / email)</div></div>
+      <div class="exp-chk" id="ec-html"></div>
+    </div>
+    <div class="exp-opt" id="eo-print" onclick="selFmt('print')">
+      <div class="exp-ico" style="background:#f0f0f3;color:#1c1c1e;font-size:11px;font-weight:700">PDF</div>
+      <div><div class="exp-name">Print / PDF</div><div class="exp-desc">Print-optimised layout</div></div>
+      <div class="exp-chk" id="ec-print"></div>
+    </div>
+    <div class="exp-opt" id="eo-csv" onclick="selFmt('csv')">
+      <div class="exp-ico" style="background:#f0f0f3;color:#1c1c1e;font-size:11px;font-weight:700">CSV</div>
+      <div><div class="exp-name">CSV (Excel)</div><div class="exp-desc">Re-importable flat table</div></div>
+      <div class="exp-chk" id="ec-csv"></div>
+    </div>
+    <div class="exp-sec">Include Companies</div>
+    <div class="co-chk-grid" id="co-chk-grid"></div>
+    <div class="btn-row" style="margin-top:15px">
+      <button class="btn btn-cancel" onclick="closeExport()">Cancel</button>
+      <button class="btn btn-save" onclick="doExport()">Export</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" style="display:none;position:fixed;bottom:26px;left:50%;transform:translateX(-50%);background:#1c1c1e;color:#fff;padding:11px 20px;border-radius:11px;font-size:13.5px;font-weight:600;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,0.25)"></div>
+
+<script>
+// ── CONFIG ─────────────────────────────────────────────────────
+let STATUSES = {
+  confirmed:{label:"Confirmed", color:"#34c759", bg:"#e4f6e9", fg:"#1d4d2b"},
+  tentative:{label:"Tentative", color:"#ff9500", bg:"#fff3e0", fg:"#5f3a00"}
+};
+let CATS = {
+  honda:   {label:"Honda Group", sub:"Standard / shared across the Honda group", badge:"ob-honda"},
+  specific:{label:"Specific",    sub:"Unique to each company",                    badge:"ob-specific"}
+};
+let CO_LABEL = {"ASH":"ASH","HLTC":"HLTC","TH":"TH","HATC":"HATC","HRAP":"HRAP","HRST":"HRS-T","APM":"APM","HAC-AO":"HAC-AO","EGAS":"EG-AS"};
+let COS = ["ASH","HLTC","TH","HATC","HRAP","HRST","APM","HAC-AO","EGAS"];
+const MONTHS = ["Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","UNS"];
+const MLABEL = {Apr:"Apr '26",May:"May '26",Jun:"Jun '26",Jul:"Jul '26",Aug:"Aug '26",Sep:"Sep '26",Oct:"Oct '26",Nov:"Nov '26",Dec:"Dec '26",Jan:"Jan '27",Feb:"Feb '27",Mar:"Mar '27",UNS:"Unscheduled"};
+
+// ── DATA (loaded from data.json) ────────────────────────────────
+let courses = {};
+
+let editCtx=null, exportFmt='json', exportCos=new Set(COS);
+let coFilter='all', catFilter='all';
+
+// ── HELPERS ────────────────────────────────────────────────────
+function toast(msg,ok=true){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.style.display='block';
+  el.style.background=ok?'#1c1c1e':'#cc0000';
+  setTimeout(()=>{el.style.display='none'},2800);
+}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function applyStatusStyles(){
+  let css='';
+  Object.entries(STATUSES).forEach(([k,v])=>{
+    css+=`.evt-${k}{background:${v.bg};color:${v.fg}}
+.evt-${k}::before{background:${v.color}}
+.evt-${k} .evt-cat{background:${v.color}26;color:${v.fg}}\n`;
+  });
+  let st=document.getElementById('dyn-status-css');
+  if(!st){st=document.createElement('style');st.id='dyn-status-css';document.head.appendChild(st);}
+  st.textContent=css;
+  const lb=document.querySelector('.legend-bar');
+  lb.innerHTML=Object.entries(STATUSES).map(([k,v])=>`<span class="leg"><span class="leg-bar" style="background:${v.color}"></span>${v.label}</span>`).join('');
+}
+
+function renderCoChips(){
+  const bar=document.querySelector('.filter-bar');
+  bar.querySelectorAll('.chip:not([data-co="all"])').forEach(c=>c.remove());
+  COS.forEach(co=>{
+    const b=document.createElement('button');
+    b.className='chip'+(coFilter===co?' active':'');
+    b.dataset.co=co; b.textContent=CO_LABEL[co]||co;
+    b.onclick=()=>filterCo(co,b);
+    bar.appendChild(b);
+  });
+}
+
+// ── MATRIX ─────────────────────────────────────────────────────
+function renderTable(){
+  const tbody=document.getElementById('tbody');
+  tbody.innerHTML='';
+  COS.forEach(co=>{
+    if(coFilter!=='all'&&coFilter!==co) return;
+    const tr=document.createElement('tr');
+    let html=`<td class="coc">${esc(CO_LABEL[co]||co)}</td>`;
+    MONTHS.forEach(mo=>{
+      const items=((courses[co]||{})[mo]||[]).map((item,idx)=>({item,idx}))
+        .filter(({item})=>catFilter==='all'||item.cat===catFilter);
+      let cells='';
+      items.forEach(({item,idx})=>{
+        const cat=CATS[item.cat]||{label:item.cat};
+        cells+=`<div class="evt evt-${esc(item.s)}" onclick="openEdit('${co}','${mo}',${idx})">
+          <div class="evt-name">${esc(item.t)}</div>
+          ${item.d?`<div class="evt-date">${esc(item.d)}</div>`:''}
+          ${item.tg?`<div class="evt-tg">${esc(item.tg)}</div>`:''}
+          <span class="evt-cat">${esc(cat.label)}</span>
+        </div>`;
+      });
+      cells+=`<button class="cell-add" onclick="openAdd('${co}','${mo}')" title="Add course">+</button>`;
+      html+=`<td>${cells}</td>`;
+    });
+    tr.innerHTML=html; tbody.appendChild(tr);
+  });
+  if(coFilter==='all'){
+    const tr=document.createElement('tr'); tr.className='total-r';
+    let html=`<td>Total Courses</td>`;
+    MONTHS.forEach(mo=>{
+      let cnt=0;
+      COS.forEach(co=>((courses[co]||{})[mo]||[]).forEach(i=>{if(catFilter==='all'||i.cat===catFilter)cnt++;}));
+      html+=`<td>${cnt||'—'}</td>`;
+    });
+    tr.innerHTML=html; tbody.appendChild(tr);
+  }
+}
+function filterCo(co,btn){
+  coFilter=co;
+  document.querySelectorAll('.chip[data-co]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); renderTable();
+}
+function filterCat(cat,btn){
+  catFilter=cat;
+  document.querySelectorAll('.cat-chip').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); renderTable();
+}
+
+// ── OVERVIEW (comparison matrix) ──────────────────────────────
+function renderOverview(){
+  let total=0; const byStatus={};
+  COS.forEach(co=>MONTHS.forEach(mo=>((courses[co]||{})[mo]||[]).forEach(i=>{total++;byStatus[i.s]=(byStatus[i.s]||0)+1;})));
+  document.getElementById('stats-grid').innerHTML=`
+    <div class="stat-c"><div class="stat-n">${COS.length}</div><div class="stat-l">Companies (Genpo)</div></div>
+    <div class="stat-c"><div class="stat-n">${total}</div><div class="stat-l">Total Courses</div></div>
+    <div class="stat-c"><div class="stat-n" style="color:#34c759">${byStatus.confirmed||0}</div><div class="stat-l">Confirmed</div></div>
+    <div class="stat-c"><div class="stat-n" style="color:#ff9500">${byStatus.tentative||0}</div><div class="stat-l">Tentative</div></div>`;
+
+  const wrap=document.getElementById('ov-sections'); wrap.innerHTML='';
+  Object.entries(CATS).forEach(([key,cat])=>{
+    const groups={};
+    COS.forEach(co=>MONTHS.forEach(mo=>((courses[co]||{})[mo]||[]).forEach(item=>{
+      if(item.cat!==key) return;
+      const n=item.t.trim();
+      if(!groups[n]) groups[n]={perCo:{},statuses:new Set()};
+      groups[n].perCo[co]=(groups[n].perCo[co]||0)+1;
+      groups[n].statuses.add(item.s);
+    })));
+    const names=Object.keys(groups).sort((a,b)=>{
+      const ca=Object.keys(groups[a].perCo).length, cb=Object.keys(groups[b].perCo).length;
+      return cb-ca || a.localeCompare(b);
+    });
+    let rows='';
+    names.forEach(n=>{
+      const g=groups[n];
+      const nEsc=esc(n).replace(/'/g,'&#39;');
+      let cells='';
+      COS.forEach(co=>{
+        const cnt=g.perCo[co]||0;
+        if(!cnt){cells+='<td><span style="color:#e5e5ea">·</span></td>';return;}
+        const sts=new Set();
+        MONTHS.forEach(mo=>((courses[co]||{})[mo]||[]).forEach(i=>{if(i.cat===key&&i.t.trim()===n)sts.add(i.s);}));
+        let cls='ov-dot-c';
+        if(sts.size>1)cls='ov-dot-mix';
+        else if(sts.has('tentative'))cls='ov-dot-t';
+        cells+=`<td><span class="ov-dot ${cls}" onclick="openGroup('${nEsc}','${co}')" title="${cnt} record(s) in ${esc(CO_LABEL[co]||co)}">${cnt}</span></td>`;
+      });
+      rows+=`<tr>
+        <td class="ovr-name" onclick="openGroup('${nEsc}',null)">${esc(n)}</td>
+        <td><div class="mini-seg">
+          <button class="${key==='honda'?'on-honda':''}" onclick="recatGroup('${nEsc}','honda')">HON</button>
+          <button class="${key==='specific'?'on-specific':''}" onclick="recatGroup('${nEsc}','specific')">SPE</button>
+        </div></td>
+        ${cells}</tr>`;
+    });
+    wrap.innerHTML+=`<div class="ov-sec">
+      <div class="ov-sec-head">
+        <span class="ov-badge ${cat.badge}">${esc(cat.label)}</span>
+        <span class="ov-sec-sub">${esc(cat.sub)}</span>
+        <span class="ov-count">${names.length} courses</span>
+      </div>
+      <div class="ov-tbl-wrap"><table class="ov-tbl">
+        <colgroup><col class="oc-name"><col class="oc-cat">${COS.map(()=>'<col class="oc-co">').join('')}</colgroup>
+        <thead><tr><th>Course</th><th>Category</th>${COS.map(c=>`<th>${esc(CO_LABEL[c]||c)}</th>`).join('')}</tr></thead>
+        <tbody>${rows||`<tr><td colspan="${COS.length+2}" style="text-align:left;padding:14px 18px;color:#8e8e93;font-size:13px">No courses in this category.</td></tr>`}</tbody>
+      </table></div>
+    </div>`;
+  });
+}
+
+function recatGroup(name,newCat){
+  let changed=0;
+  COS.forEach(co=>MONTHS.forEach(mo=>((courses[co]||{})[mo]||[]).forEach(i=>{
+    if(i.t.trim()===name){i.cat=newCat;changed++;}
+  })));
+  renderOverview(); renderTable();
+  toast(`"${name.length>34?name.slice(0,34)+'…':name}" → ${CATS[newCat].label} (${changed} records) ✓`);
+}
+
+// ── GROUP MODAL ───────────────────────────────────────────────
+let grpName=null;
+function openGroup(name,coFilterArg){
+  grpName=name;
+  document.getElementById('grp-title').textContent=name;
+  let curCat='specific';
+  outer: for(const co of COS) for(const mo of MONTHS) for(const i of ((courses[co]||{})[mo]||[])){
+    if(i.t.trim()===name){curCat=i.cat;break outer;}
+  }
+  document.querySelectorAll('#grp-seg .seg-btn').forEach(b=>{
+    b.classList.toggle('active',b.dataset.c===curCat);
+  });
+  const list=document.getElementById('grp-list'); list.innerHTML='';
+  let count=0;
+  COS.forEach(co=>{
+    if(coFilterArg&&co!==coFilterArg) return;
+    MONTHS.forEach(mo=>{
+      ((courses[co]||{})[mo]||[]).forEach((i,idx)=>{
+        if(i.t.trim()!==name) return;
+        count++;
+        const stc=(STATUSES[i.s]||{}).color||'#8e8e93';
+        const stl=(STATUSES[i.s]||{}).label||i.s;
+        list.innerHTML+=`<div class="grp-rec">
+          <div class="grp-rec-bar" style="background:${stc}"></div>
+          <div class="grp-rec-info">
+            <div class="grp-rec-co">${esc(CO_LABEL[co]||co)} · ${MLABEL[mo]}</div>
+            <div class="grp-rec-meta">${i.d?esc(i.d)+' · ':''}${stl}${i.tg?' · '+esc(i.tg):''}</div>
+          </div>
+          <button class="grp-edit-btn" onclick="grpEdit('${co}','${mo}',${idx})">Edit</button>
+        </div>`;
+      });
+    });
+  });
+  if(coFilterArg&&count===0){ openGroup(name,null); return; }
+  document.getElementById('grp-count').textContent=count;
+  document.getElementById('grp-bg').classList.add('open');
+}
+function setGrpCat(c){
+  if(!grpName) return;
+  recatGroup(grpName,c);
+  document.querySelectorAll('#grp-seg .seg-btn').forEach(b=>b.classList.toggle('active',b.dataset.c===c));
+}
+function grpEdit(co,mo,idx){
+  closeGrp();
+  openEdit(co,mo,idx);
+}
+function closeGrp(){document.getElementById('grp-bg').classList.remove('open');}
+function closeGrpBg(e){if(e.target===document.getElementById('grp-bg'))closeGrp();}
+
+// ── SETTINGS ───────────────────────────────────────────────────
+function renderSettings(){
+  const sl=document.getElementById('status-list'); sl.innerHTML='';
+  Object.entries(STATUSES).forEach(([k,v])=>{
+    const row=document.createElement('div'); row.className='set-row';
+    row.innerHTML=`<input type="color" class="set-color" value="${v.color}" data-status="${k}" data-f="color">
+      <span class="set-badge" style="background:${v.bg};color:${v.fg}">${k}</span>
+      <input class="set-input" value="${esc(v.label)}" data-status="${k}" data-f="label">`;
+    sl.appendChild(row);
+  });
+  const cl=document.getElementById('cat-list'); cl.innerHTML='';
+  Object.entries(CATS).forEach(([k,v])=>{
+    const row=document.createElement('div'); row.className='set-row';
+    row.innerHTML=`<span class="set-badge ${v.badge}">${k}</span>
+      <div style="flex:1"><input class="set-input" value="${esc(v.label)}" data-cat="${k}" data-f="label" style="margin-bottom:4px;width:100%">
+      <input class="set-input" value="${esc(v.sub)}" data-cat="${k}" data-f="sub" style="width:100%"></div>`;
+    cl.appendChild(row);
+  });
+  const col=document.getElementById('co-list'); col.innerHTML='';
+  COS.forEach(co=>{
+    const row=document.createElement('div'); row.className='set-row';
+    row.innerHTML=`<span class="set-badge" style="background:#fff5f5;color:#cc0000">${esc(co)}</span>
+      <input class="set-input" value="${esc(CO_LABEL[co]||co)}" data-co="${esc(co)}">`;
+    col.appendChild(row);
+  });
+}
+function saveStatuses(){
+  document.querySelectorAll('#status-list [data-status]').forEach(inp=>{
+    const k=inp.dataset.status, f=inp.dataset.f;
+    if(!STATUSES[k]) return;
+    if(f==='color'){
+      STATUSES[k].color=inp.value;
+      STATUSES[k].bg=tint(inp.value,0.88);
+      STATUSES[k].fg=shade(inp.value,0.55);
+    } else STATUSES[k].label=inp.value.trim()||STATUSES[k].label;
+  });
+  applyStatusStyles(); renderTable(); renderSettings(); toast('Statuses saved ✓');
+}
+function tint(hex,f){
+  const [r,g,b]=hex2rgb(hex);
+  return rgb2hex(Math.round(r+(255-r)*f),Math.round(g+(255-g)*f),Math.round(b+(255-b)*f));
+}
+function shade(hex,f){
+  const [r,g,b]=hex2rgb(hex);
+  return rgb2hex(Math.round(r*(1-f)),Math.round(g*(1-f)),Math.round(b*(1-f)));
+}
+function hex2rgb(h){h=h.replace('#','');return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)];}
+function rgb2hex(r,g,b){return '#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('');}
+
+function saveCats(){
+  document.querySelectorAll('#cat-list [data-cat]').forEach(inp=>{
+    const k=inp.dataset.cat,f=inp.dataset.f;
+    if(CATS[k]) CATS[k][f]=inp.value.trim();
+  });
+  populateModalSelects();
+  document.querySelectorAll('.cat-chip').forEach(b=>{
+    const c=b.dataset.cat; if(c!=='all'&&CATS[c]) b.textContent=CATS[c].label;
+  });
+  renderTable(); toast('Categories saved ✓');
+}
+function saveCompanies(){
+  document.querySelectorAll('#co-list [data-co]').forEach(inp=>{CO_LABEL[inp.dataset.co]=inp.value.trim();});
+  renderCoChips(); renderTable(); toast('Companies saved ✓');
+}
+function addCompany(){
+  const code=prompt('Company code (e.g. NEW):'); if(!code||!code.trim())return;
+  const c=code.trim().toUpperCase();
+  if(COS.includes(c)){toast('Already exists',false);return;}
+  COS.push(c); CO_LABEL[c]=c;
+  courses[c]={}; MONTHS.forEach(m=>courses[c][m]=[]);
+  renderSettings(); renderCoChips(); renderTable(); toast(`${c} added ✓`);
+}
+function clearAll(){
+  if(!confirm('Delete ALL courses? This cannot be undone.'))return;
+  COS.forEach(co=>{courses[co]={};MONTHS.forEach(m=>courses[co][m]=[]);});
+  renderTable(); toast('All courses cleared');
+}
+
+// ── MODAL ──────────────────────────────────────────────────────
+function populateModalSelects(){
+  document.getElementById('f-cat').innerHTML=Object.entries(CATS).map(([k,v])=>`<option value="${k}">${esc(v.label)}</option>`).join('');
+  document.getElementById('f-month').innerHTML=MONTHS.map(m=>`<option value="${m}">${MLABEL[m]}</option>`).join('');
+}
+let segVal='tentative';
+function fmtDMY(iso){ if(!iso)return ''; const [y,m,d]=iso.split('-'); return (y&&m&&d)?`${d}/${m}/${y}`:''; }
+function parseDMY(s){ const m=String(s||'').match(/(\d{2})\/(\d{2})\/(\d{4})/); return m?`${m[3]}-${m[2]}-${m[1]}`:''; }
+function composeDateRange(){
+  const s=fmtDMY(document.getElementById('f-start').value);
+  const e=fmtDMY(document.getElementById('f-end').value);
+  if(s&&e) return s===e?s:`${s} – ${e}`;
+  return s||e||'';
+}
+function clearDates(){ document.getElementById('f-start').value=''; document.getElementById('f-end').value=''; }
+function setDateInputsFrom(str){
+  clearDates();
+  const parts=String(str||'').split(/\s*–\s*|\s+-\s+/);
+  const a=parseDMY(parts[0]||''); const b=parseDMY(parts[1]||parts[0]||'');
+  if(a)document.getElementById('f-start').value=a;
+  if(b)document.getElementById('f-end').value=b;
+}
+function setSeg(btn){
+  segVal=btn.dataset.s;
+  document.querySelectorAll('#seg-status .seg-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function setSegByVal(v){
+  segVal=v;
+  document.querySelectorAll('#seg-status .seg-btn').forEach(b=>b.classList.toggle('active',b.dataset.s===v));
+}
+function openAdd(co,mo){
+  editCtx={co,mo,idx:-1};
+  document.getElementById('modal-title').textContent=`Add — ${CO_LABEL[co]||co} · ${MLABEL[mo]}`;
+  document.getElementById('f-name').value='';
+  clearDates();
+  document.getElementById('f-target').value='';
+  document.getElementById('f-cat').value='specific';
+  document.getElementById('f-month').value=mo;
+  setSegByVal('tentative');
+  document.getElementById('btn-del').style.display='none';
+  document.getElementById('modal-bg').classList.add('open');
+  setTimeout(()=>document.getElementById('f-name').focus(),80);
+}
+function openEdit(co,mo,idx){
+  const i=courses[co][mo][idx]; editCtx={co,mo,idx};
+  document.getElementById('modal-title').textContent=`Edit — ${CO_LABEL[co]||co} · ${MLABEL[mo]}`;
+  document.getElementById('f-name').value=i.t||'';
+  setDateInputsFrom(i.d);
+  document.getElementById('f-target').value=i.tg||'';
+  document.getElementById('f-cat').value=i.cat||'specific';
+  document.getElementById('f-month').value=mo;
+  setSegByVal(i.s||'tentative');
+  document.getElementById('btn-del').style.display='';
+  document.getElementById('modal-bg').classList.add('open');
+  setTimeout(()=>document.getElementById('f-name').focus(),80);
+}
+function closeModal(){document.getElementById('modal-bg').classList.remove('open');}
+function closeMBg(e){if(e.target===document.getElementById('modal-bg'))closeModal();}
+function saveCourse(){
+  if(!editCtx)return;
+  const {co,mo,idx}=editCtx;
+  const newMo=document.getElementById('f-month').value;
+  const item={
+    t:document.getElementById('f-name').value.trim()||'Untitled',
+    d:composeDateRange(),
+    tg:document.getElementById('f-target').value.trim(),
+    s:segVal,
+    cat:document.getElementById('f-cat').value
+  };
+  if(idx===-1){
+    if(!courses[co][newMo])courses[co][newMo]=[];
+    courses[co][newMo].push(item);
+  } else {
+    if(newMo===mo){ courses[co][mo][idx]=item; }
+    else { courses[co][mo].splice(idx,1); if(!courses[co][newMo])courses[co][newMo]=[]; courses[co][newMo].push(item); }
+  }
+  closeModal(); renderTable();
+  if(document.getElementById('page-overview').classList.contains('active')) renderOverview();
+}
+function delCourse(){
+  if(!editCtx||editCtx.idx===-1)return;
+  courses[editCtx.co][editCtx.mo].splice(editCtx.idx,1);
+  closeModal(); renderTable();
+  if(document.getElementById('page-overview').classList.contains('active')) renderOverview();
+}
+
+// ── IMPORT ─────────────────────────────────────────────────────
+function handleImport(evt){
+  const file=evt.target.files[0]; if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{ importCSV(e.target.result); }
+    catch(err){ toast('Import error: '+err.message,false); }
+    evt.target.value='';
+  };
+  reader.readAsText(file,'UTF-8');
+}
+function importCSV(text){
+  const lines=text.replace(/\r/g,'').split('\n').filter(l=>l.trim());
+  if(lines.length<2){toast('CSV empty',false);return;}
+  const headers=parseCSVRow(lines[0]).map(h=>h.toLowerCase().trim().replace(/[\s/]+/g,'_'));
+  const idx=k=>headers.findIndex(h=>h.includes(k));
+  const ci=idx('company'), ni=idx('course'), di=idx('date'), si=idx('status'), oi=idx('categ'), ti=idx('target'), mi=idx('month');
+  if(ci<0||ni<0){toast('CSV needs company + course columns',false);return;}
+  let added=0,skip=0;
+  for(let r=1;r<lines.length;r++){
+    const c=parseCSVRow(lines[r]);
+    const co=c[ci]?.trim(), name=c[ni]?.trim();
+    if(!co||!name){skip++;continue;}
+    let mo='UNS';
+    if(mi>=0&&c[mi]){
+      const raw=c[mi].trim().replace(/'?\d{2,4}$/,'').trim();
+      const m=MONTHS.find(x=>raw.toLowerCase().startsWith(x.toLowerCase()));
+      if(m)mo=m;
+      else if(raw.toLowerCase().startsWith('uns'))mo='UNS';
+    }
+    if(mo==='UNS'&&di>=0&&c[di]){
+      const ds=c[di].toLowerCase();
+      const m=MONTHS.find(x=>x!=='UNS'&&ds.includes(x.toLowerCase()));
+      if(m)mo=m;
+    }
+    if(!courses[co]){COS.push(co);CO_LABEL[co]=co;courses[co]={};MONTHS.forEach(m=>courses[co][m]=[]);}
+    if(!courses[co][mo])courses[co][mo]=[];
+    courses[co][mo].push({
+      t:name,
+      d:di>=0?(c[di]||'').trim():'',
+      tg:ti>=0?(c[ti]||'').trim():'',
+      s:normStatus(si>=0?c[si]:''),
+      cat:oi>=0&&c[oi]?normCat(c[oi].trim()):'specific'
+    });
+    added++;
+  }
+  renderCoChips(); renderTable();
+  toast(`Imported ${added} courses${skip?' ('+skip+' skipped)':''} ✓`);
+}
+function normCat(v){
+  const x=(v||'').toLowerCase();
+  if(x.includes('specific'))return 'specific';
+  return 'honda';
+}
+function normStatus(v){
+  return (v||'').trim().toLowerCase()==='confirmed'?'confirmed':'tentative';
+}
+function parseCSVRow(row){
+  const res=[];let cur='',q=false;
+  for(let i=0;i<row.length;i++){
+    const ch=row[i];
+    if(ch==='"'&&!q)q=true;
+    else if(ch==='"'&&q){if(row[i+1]==='"'){cur+='"';i++;}else q=false;}
+    else if(ch===','&&!q){res.push(cur);cur='';}
+    else cur+=ch;
+  }
+  res.push(cur);return res.map(s=>s.replace(/^"|"$/g,''));
+}
+
+// ── EXPORT ─────────────────────────────────────────────────────
+function openExport(){
+  exportFmt='json'; exportCos=new Set(COS);
+  ['json','html','print','csv'].forEach(f=>{document.getElementById('eo-'+f).classList.toggle('sel',f==='json');document.getElementById('ec-'+f).textContent=f==='json'?'✓':'';});
+  document.getElementById('co-chk-grid').innerHTML=COS.map(co=>`<div class="coch sel" id="coch-${esc(co)}" onclick="toggleExpCo('${esc(co)}')">${esc(CO_LABEL[co]||co)}</div>`).join('');
+  document.getElementById('export-bg').classList.add('open');
+}
+function closeExport(){document.getElementById('export-bg').classList.remove('open');}
+function closeExpBg(e){if(e.target===document.getElementById('export-bg'))closeExport();}
+function selFmt(f){exportFmt=f;['json','html','print','csv'].forEach(id=>{document.getElementById('eo-'+id).classList.toggle('sel',id===f);document.getElementById('ec-'+id).textContent=id===f?'✓':'';});}
+function toggleExpCo(co){if(exportCos.has(co)){exportCos.delete(co);document.getElementById('coch-'+co).classList.remove('sel');}else{exportCos.add(co);document.getElementById('coch-'+co).classList.add('sel');}}
+function doExport(){closeExport();if(exportFmt==='json')exportJSON();else if(exportFmt==='csv')doCSV();else if(exportFmt==='print')doPrint();else doHTML();}
+
+function doCSV(all=false){
+  const cos=all?COS:COS.filter(co=>exportCos.has(co));
+  const rows=[['Company','Month','Course Name','Status','Category','Date / Week / Month','Target Audience']];
+  cos.forEach(co=>MONTHS.forEach(mo=>((courses[co]||{})[mo]||[]).forEach(i=>{
+    rows.push([CO_LABEL[co]||co,MLABEL[mo],i.t,i.s,(CATS[i.cat]||{}).label||i.cat,i.d||'',i.tg||'']);
+  })));
+  const csv=rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\r\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8'}));
+  a.download='9Genpo_Training_Comparison_Apr2026-Mar2027.csv'; a.click();
+  if(all)toast('Backup CSV downloaded ✓');
+}
+
+function doPrint(){
+  const cos=COS.filter(co=>exportCos.has(co));
+  let tbl=`<table><thead><tr><th>Co.</th>${MONTHS.map(m=>`<th>${MLABEL[m]}</th>`).join('')}</tr></thead><tbody>`;
+  cos.forEach(co=>{
+    tbl+=`<tr><td class="cohead">${esc(CO_LABEL[co]||co)}</td>`;
+    MONTHS.forEach(mo=>{
+      const items=((courses[co]||{})[mo]||[]);
+      tbl+=`<td>${items.length?items.map(i=>`<div class="ev ev-${i.s}"><b>${esc(i.t)}</b>${i.d?'<br>'+esc(i.d):''}</div>`).join(''):'—'}</td>`;
+    });
+    tbl+=`</tr>`;
+  });
+  tbl+=`</tbody></table>`;
+  const w=window.open('','_blank');
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>9Genpo Training Comparison</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0;font-size:8px;font-family:Arial,sans-serif}body{padding:8px}
+  h1{font-size:13px;color:#cc0000;margin-bottom:2px}p{font-size:8.5px;color:#999;margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;table-layout:fixed}
+  th{background:#cc0000;color:#fff;padding:4px 3px;text-align:center}
+  th:first-child{text-align:left;width:46px}td{padding:3px;border:0.5px solid #eee;vertical-align:top}
+  td.cohead{font-weight:700;background:#fafafa}
+  .ev{border-radius:3px;padding:2px 4px;margin:1px 0;border-left:2.5px solid}
+  .ev-confirmed{background:#e4f6e9;border-color:#34c759}
+  .ev-tentative{background:#fff3e0;border-color:#ff9500}
+  @media print{body{padding:0}}</style></head><body>
+  <h1>9Genpo Training Comparison — 103Ki</h1>
+  <p>Apr 2026 – Mar 2027 · Exported ${new Date().toLocaleDateString()}</p>${tbl}
+  <script>window.onload=()=>window.print();<\/script></body></html>`);
+  w.document.close();
+}
+
+function bundle(){
+  return {version:7,updated:new Date().toISOString().slice(0,10),COS,CO_LABEL,STATUSES,CATS,courses};
+}
+function exportJSON(){
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([JSON.stringify(bundle(),null,2)],{type:'application/json;charset=utf-8'}));
+  a.download='data.json'; a.click();
+  toast('data.json downloaded — commit it to GitHub to publish ✓');
+}
+
+function doHTML(){
+  let src=document.documentElement.outerHTML;
+  src=src.replace(/<script id="bundle-data">[\s\S]*?<\/script>\s*/g,'');
+  const inject=`<script id="bundle-data">window.__BUNDLE__=${JSON.stringify(bundle())};<\/script>\n`;
+  src=src.replace('<body>', '<body>\n'+inject);
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob(['<!DOCTYPE html>\n'+src],{type:'text/html;charset=utf-8'}));
+  a.download='9Genpo_Training_Comparison_Apr2026-Mar2027.html'; a.click();
+}
+
+// ── NAV ────────────────────────────────────────────────────────
+function showPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active'); btn.classList.add('active');
+  if(id==='overview')renderOverview();
+  if(id==='settings')renderSettings();
+}
+
+// ── DATA LOADING & INIT ────────────────────────────────────────
+function buildEmpty(){const o={};COS.forEach(co=>{o[co]={};MONTHS.forEach(m=>o[co][m]=[]);});return o;}
+function ensureShape(){COS.forEach(co=>{if(!courses[co])courses[co]={};MONTHS.forEach(m=>{if(!courses[co][m])courses[co][m]=[];});});}
+function applyBundle(b){
+  if(!b||typeof b!=='object')return false;
+  if(Array.isArray(b.COS)&&b.COS.length)COS=b.COS.slice();
+  if(b.CO_LABEL&&typeof b.CO_LABEL==='object')CO_LABEL=Object.assign({},b.CO_LABEL);
+  if(b.STATUSES&&typeof b.STATUSES==='object')STATUSES=b.STATUSES;
+  if(b.CATS&&typeof b.CATS==='object')CATS=b.CATS;
+  if(b.courses&&typeof b.courses==='object')courses=b.courses;
+  ensureShape();
+  return true;
+}
+function setShareHint(){
+  const el=document.getElementById('share-hint'); if(!el)return;
+  const hosted=location.protocol.startsWith('http');
+  el.innerHTML=hosted
+    ? 'This page is loading <b>data.json</b> from its folder. To update what everyone sees: edit here → <b>Download data.json</b> → commit it to the repo.'
+    : 'Opened as a local file. To share online, put <b>index.html</b> + <b>data.json</b> in a GitHub repo and enable Pages — then share the link.';
+}
+async function boot(){
+  courses=buildEmpty();
+  if(window.__BUNDLE__){ applyBundle(window.__BUNDLE__); }
+  else{
+    const p=new URLSearchParams(location.search);
+    const url=p.get('data')||(location.protocol.startsWith('http')?'data.json':null);
+    if(url){
+      try{
+        const r=await fetch(url,{cache:'no-store'});
+        if(r.ok){ applyBundle(await r.json()); }
+      }catch(e){ /* offline / no file → blank template */ }
+    }
+  }
+  ensureShape();
+  exportCos=new Set(COS);
+  applyStatusStyles(); renderCoChips(); populateModalSelects(); renderTable(); setShareHint();
+}
+boot();
+</script>
+
+</body>
+</html>
