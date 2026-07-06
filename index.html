@@ -28,6 +28,12 @@ body{font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,'Tahoma',sans-s
 .nav-vr{width:1px;height:26px;background:var(--line);flex-shrink:0}
 .nav-title{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1.15}
 .nav-sub{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:0.01em;margin-top:1px}
+.sync-badge{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:999px;margin-left:14px;flex-shrink:0;white-space:nowrap}
+.sync-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.sync-live{background:#e4f6e9;color:#1a7a3a}
+.sync-live .sync-dot{background:#34c759;box-shadow:0 0 0 3px rgba(52,199,89,0.18)}
+.sync-offline{background:#fff3e0;color:#a35e00}
+.sync-offline .sync-dot{background:#ff9500}
 .nav-tabs{display:flex;gap:2px;margin-left:auto;background:#ededf0;border-radius:10px;padding:3px;flex-shrink:0}
 .nav-tab{padding:6px 16px;border-radius:8px;font-size:13.5px;font-weight:500;color:var(--muted);cursor:pointer;border:none;background:transparent;font-family:inherit;transition:all 0.18s;white-space:nowrap}
 .nav-tab:hover{color:var(--ink-2)}
@@ -211,6 +217,7 @@ td.coc{font-size:15px;font-weight:700;color:var(--ink);background:var(--surface-
       <div class="nav-title">9Genpo Training Comparison</div>
       <div class="nav-sub">103Ki · Apr 2026 – Mar 2027</div>
     </div>
+    <div id="sync-badge" class="sync-badge sync-offline"><span class="sync-dot"></span>Connecting…</div>
     <div class="nav-tabs">
       <button class="nav-tab active" onclick="showPage('matrix',this)">Matrix</button>
       <button class="nav-tab" onclick="showPage('overview',this)">Overview</button>
@@ -335,9 +342,9 @@ td.coc{font-size:15px;font-weight:700;color:var(--ink);background:var(--surface-
     </div>
     <div class="set-card">
       <div class="set-title">Share &amp; Data</div>
-      <div class="set-sub">Publish to GitHub, or back up / restore the dataset</div>
-      <button class="add-row-btn" onclick="exportJSON()" style="margin-top:0;border-style:solid;border-color:#cc0000;color:#cc0000">Download data.json — publish to GitHub</button>
-      <button class="add-row-btn" onclick="doCSV(true)">Download all data as CSV (backup)</button>
+      <div class="set-sub">Every edit here syncs live to everyone viewing the link</div>
+      <button class="add-row-btn" onclick="doCSV(true)" style="margin-top:0">Download all data as CSV (backup)</button>
+      <button class="add-row-btn" onclick="exportJSON()">Download data.json (backup / offline copy)</button>
       <button class="add-row-btn" onclick="document.getElementById('import-file').click()">Import CSV (appends to current data)</button>
       <button class="add-row-btn" onclick="clearAll()" style="color:#ff3b30;border-color:#ff3b30">Clear all courses</button>
       <div id="share-hint" style="font-size:12px;color:#8e8e93;margin-top:11px;line-height:1.5"></div>
@@ -593,7 +600,7 @@ function recatGroup(name,newCat){
   COS.forEach(co=>MONTHS.forEach(mo=>((courses[co]||{})[mo]||[]).forEach(i=>{
     if(i.t.trim()===name){i.cat=newCat;changed++;}
   })));
-  renderOverview(); renderTable();
+  renderOverview(); renderTable(); persist();
   toast(`"${name.length>34?name.slice(0,34)+'…':name}" → ${CATS[newCat].label} (${changed} records) ✓`);
 }
 
@@ -682,7 +689,7 @@ function saveStatuses(){
       STATUSES[k].fg=shade(inp.value,0.55);
     } else STATUSES[k].label=inp.value.trim()||STATUSES[k].label;
   });
-  applyStatusStyles(); renderTable(); renderSettings(); toast('Statuses saved ✓');
+  applyStatusStyles(); renderTable(); renderSettings(); persist(); toast('Statuses saved ✓');
 }
 function tint(hex,f){
   const [r,g,b]=hex2rgb(hex);
@@ -704,11 +711,11 @@ function saveCats(){
   document.querySelectorAll('.cat-chip').forEach(b=>{
     const c=b.dataset.cat; if(c!=='all'&&CATS[c]) b.textContent=CATS[c].label;
   });
-  renderTable(); toast('Categories saved ✓');
+  renderTable(); persist(); toast('Categories saved ✓');
 }
 function saveCompanies(){
   document.querySelectorAll('#co-list [data-co]').forEach(inp=>{CO_LABEL[inp.dataset.co]=inp.value.trim();});
-  renderCoChips(); renderTable(); toast('Companies saved ✓');
+  renderCoChips(); renderTable(); persist(); toast('Companies saved ✓');
 }
 function addCompany(){
   const code=prompt('Company code (e.g. NEW):'); if(!code||!code.trim())return;
@@ -716,12 +723,12 @@ function addCompany(){
   if(COS.includes(c)){toast('Already exists',false);return;}
   COS.push(c); CO_LABEL[c]=c;
   courses[c]={}; MONTHS.forEach(m=>courses[c][m]=[]);
-  renderSettings(); renderCoChips(); renderTable(); toast(`${c} added ✓`);
+  renderSettings(); renderCoChips(); renderTable(); persist(); toast(`${c} added ✓`);
 }
 function clearAll(){
   if(!confirm('Delete ALL courses? This cannot be undone.'))return;
   COS.forEach(co=>{courses[co]={};MONTHS.forEach(m=>courses[co][m]=[]);});
-  renderTable(); toast('All courses cleared');
+  renderTable(); persist(); toast('All courses cleared');
 }
 
 // ── MODAL ──────────────────────────────────────────────────────
@@ -801,13 +808,13 @@ function saveCourse(){
     if(newMo===mo){ courses[co][mo][idx]=item; }
     else { courses[co][mo].splice(idx,1); if(!courses[co][newMo])courses[co][newMo]=[]; courses[co][newMo].push(item); }
   }
-  closeModal(); renderTable();
+  closeModal(); renderTable(); persist();
   if(document.getElementById('page-overview').classList.contains('active')) renderOverview();
 }
 function delCourse(){
   if(!editCtx||editCtx.idx===-1)return;
   courses[editCtx.co][editCtx.mo].splice(editCtx.idx,1);
-  closeModal(); renderTable();
+  closeModal(); renderTable(); persist();
   if(document.getElementById('page-overview').classList.contains('active')) renderOverview();
 }
 
@@ -857,7 +864,7 @@ function importCSV(text){
     });
     added++;
   }
-  renderCoChips(); renderTable();
+  renderCoChips(); renderTable(); persist();
   toast(`Imported ${added} courses${skip?' ('+skip+' skipped)':''} ✓`);
 }
 function normCat(v){
@@ -978,13 +985,65 @@ function applyBundle(b){
   ensureShape();
   return true;
 }
+function refreshAll(){
+  ensureShape();
+  exportCos=new Set(COS);
+  applyStatusStyles(); renderCoChips(); populateModalSelects(); renderTable();
+  if(document.getElementById('page-overview').classList.contains('active')) renderOverview();
+  if(document.getElementById('page-settings').classList.contains('active')) renderSettings();
+}
+function setSyncBadge(live){
+  const el=document.getElementById('sync-badge'); if(!el)return;
+  el.className='sync-badge '+(live?'sync-live':'sync-offline');
+  el.innerHTML=`<span class="sync-dot"></span>${live?'Live — everyone sees this':'Offline (this browser only)'}`;
+}
 function setShareHint(){
   const el=document.getElementById('share-hint'); if(!el)return;
-  const hosted=location.protocol.startsWith('http');
-  el.innerHTML=hosted
-    ? 'This page is loading <b>data.json</b> from its folder. To update what everyone sees: edit here → <b>Download data.json</b> → commit it to the repo.'
-    : 'Opened as a local file. To share online, put <b>index.html</b> + <b>data.json</b> in a GitHub repo and enable Pages — then share the link.';
+  el.innerHTML = fb
+    ? 'Connected to shared live data. Every change here (courses, statuses, categories, companies) saves instantly — everyone with the link sees it, no export/commit step needed.'
+    : 'Offline mode: changes only stay in this browser tab. Check that <b>firebase-config.js</b> is present and the Firestore project is reachable, then reload to enable live sync.';
 }
+
+// ── FIREBASE REAL-TIME SYNC ─────────────────────────────────────
+const FS_COLLECTION='genpo_training', FS_DOC='main';
+let fb=null, applyingRemote=false;
+async function connectFirebase(){
+  try{
+    const cfgMod=await import('./firebase-config.js');
+    const cfg=cfgMod.firebaseConfig;
+    if(!cfg||!cfg.apiKey) throw new Error('missing firebase-config.js');
+    const {initializeApp}=await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js');
+    const fsMod=await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+    const app=initializeApp(cfg);
+    const db=fsMod.getFirestore(app);
+    fb={db, doc:fsMod.doc, setDoc:fsMod.setDoc, onSnapshot:fsMod.onSnapshot, serverTimestamp:fsMod.serverTimestamp};
+    const ref=fb.doc(db, FS_COLLECTION, FS_DOC);
+    fb.onSnapshot(ref, snap=>{
+      if(snap.exists()){
+        applyingRemote=true;
+        applyBundle(snap.data());
+        refreshAll();
+        applyingRemote=false;
+      } else {
+        persist(); // first run on this project — seed the shared doc with current template
+      }
+      setSyncBadge(true); setShareHint();
+    }, err=>{
+      console.error('Firestore sync error', err);
+      setSyncBadge(false); setShareHint();
+    });
+  }catch(e){
+    fb=null; setSyncBadge(false); setShareHint();
+  }
+}
+async function persist(){
+  if(!fb||applyingRemote) return;
+  try{
+    const ref=fb.doc(fb.db, FS_COLLECTION, FS_DOC);
+    await fb.setDoc(ref, {...bundle(), updatedAt: fb.serverTimestamp()});
+  }catch(e){ toast('Sync failed: '+e.message, false); }
+}
+
 async function boot(){
   courses=buildEmpty();
   if(window.__BUNDLE__){ applyBundle(window.__BUNDLE__); }
@@ -998,9 +1057,9 @@ async function boot(){
       }catch(e){ /* offline / no file → blank template */ }
     }
   }
-  ensureShape();
-  exportCos=new Set(COS);
-  applyStatusStyles(); renderCoChips(); populateModalSelects(); renderTable(); setShareHint();
+  refreshAll();
+  setSyncBadge(false); setShareHint();
+  connectFirebase();
 }
 boot();
 </script>
